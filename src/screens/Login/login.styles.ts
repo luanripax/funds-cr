@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 18,
   },
+  signUpText: {
+    color: "#A0A0A0",
+    fontFamily: theme.fonts.light,
+    textAlign: "center",
+    fontSize: 12,
+    marginTop: 8,
+  },
 });
 
 export default styles;
