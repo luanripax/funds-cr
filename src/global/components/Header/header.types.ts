@@ -5,5 +5,6 @@ export interface IHeaderProps {
   leftContent?: ReactNode;
   middleContent?: ReactNode;
   rightContent?: ReactNode;
+  extraContent?: ReactNode;
   onBack?: () => void;
 }

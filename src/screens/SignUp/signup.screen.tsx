@@ -26,6 +26,10 @@ const SignUpScreen = () => {
     goBack();
   };
 
+  const handleSignIn = () => {
+    navigate("TabNavigator");
+  };
+
   const [checked, setChecked] = useState(false);
 
   return (
@@ -58,7 +62,7 @@ const SignUpScreen = () => {
         </View>
 
         <Spacing vertical={16} />
-        <Button title="Create account" />
+        <Button title="Create account" onPress={handleSignIn} />
         <Text style={styles.signUpText}>
           Already have an account ?{" "}
           <Text onPress={onBack} style={styles.underlineText}>

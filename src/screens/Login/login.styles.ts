@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.light,
     textAlign: "center",
     fontSize: 12,
-    marginTop: 8,
+    marginTop: 16,
   },
 });
 

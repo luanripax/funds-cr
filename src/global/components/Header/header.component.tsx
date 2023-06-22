@@ -9,6 +9,7 @@ const Header = ({
   leftContent,
   middleContent,
   rightContent,
+  extraContent,
   onBack,
 }: IHeaderProps) => {
   return (
@@ -30,6 +31,7 @@ const Header = ({
         {middleContent && middleContent}
         {rightContent && rightContent}
       </View>
+      {extraContent && extraContent}
     </View>
   );
 };

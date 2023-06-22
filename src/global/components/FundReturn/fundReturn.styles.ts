@@ -4,17 +4,18 @@ import { theme } from "../../../theme";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.background,
-    minHeight: 50 + getStatusBarHeight() + 20,
-    width: "100%",
-    borderBottomColor: "#F4F4F4",
-  },
-  content: {
-    marginTop: getStatusBarHeight() + 20,
-    paddingHorizontal: 20,
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+  },
+  gainText: {
+    fontFamily: theme.fonts.regular,
+    fontSize: 14,
+    color: "#0FDF8F",
+  },
+  lossText: {
+    fontFamily: theme.fonts.regular,
+    fontSize: 14,
+    color: "#EE8688",
   },
 });
 
