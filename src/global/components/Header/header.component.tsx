@@ -17,7 +17,7 @@ const Header = ({
     >
       <View style={styles.content}>
         {onBack ? (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onBack}>
             <MaterialCommunityIcons
               name="arrow-left"
               size={24}

@@ -6,6 +6,7 @@ import {
 } from "@react-navigation/stack";
 import TabNavigator from "../tab";
 import LoginScreen from "../../screens/Login/login.screen";
+import SignUpScreen from "../../screens/SignUp/signup.screen";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const RootNavigator = () => {
       >
         <Stack.Screen name="TabNavigator" component={TabNavigator} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
