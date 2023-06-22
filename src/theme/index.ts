@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     primary: "#770FDF",
+    background: "#FFFFFF",
   },
   fonts: {
     bold: "Sora-Bold",
