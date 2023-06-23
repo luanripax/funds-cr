@@ -8,7 +8,14 @@ import TabNavigator from "../tab";
 import LoginScreen from "../../screens/Login/login.screen";
 import SignUpScreen from "../../screens/SignUp/signup.screen";
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Login: undefined;
+  TabNavigator: undefined;
+  Signup: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
   return (

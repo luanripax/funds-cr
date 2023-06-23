@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import Toast from "react-native-toast-message";
 import { setUserLogged } from "../../store/modules/auth/auth.slice";
 import { useDispatch } from "react-redux";
+import { SignupScreenNavigationProp } from "./signup.types";
 
 const Progress = () => {
   return (
@@ -23,7 +24,7 @@ const Progress = () => {
 };
 
 const SignUpScreen = () => {
-  const { navigate, goBack } = useNavigation();
+  const { navigate, goBack } = useNavigation<SignupScreenNavigationProp>();
   const dispatch = useDispatch();
 
   const onBack = () => {

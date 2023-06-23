@@ -9,9 +9,10 @@ import { useNavigation } from "@react-navigation/native";
 import { useSelector, useDispatch } from "react-redux";
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { RootState } from "../../store/store.types";
+import { HomeScreenNavigationProp } from "./login.types";
 
 const LoginScreen = () => {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<HomeScreenNavigationProp>();
   const { logged } = useSelector((state: RootState) => state.auth);
 
   const handleLogin = () => {
