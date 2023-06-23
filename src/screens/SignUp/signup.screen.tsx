@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Header from "../../global/components/Header/header.component";
 import Input from "../../global/components/Input/input.component";
 import styles from "./signup.styles";
@@ -51,7 +51,7 @@ const SignUpScreen = () => {
         rightContent={<View />}
       />
       <Text style={styles.title}>Create your account</Text>
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+      <View style={styles.content}>
         <Input label="First Name" placeholder="Enter your first name" />
         <Input label="Last Name" placeholder="Enter your last name" />
         <Input label="Email" placeholder="Enter your email" />
@@ -84,7 +84,7 @@ const SignUpScreen = () => {
             Log in here
           </Text>
         </Text>
-      </ScrollView>
+      </View>
     </View>
   );
 };

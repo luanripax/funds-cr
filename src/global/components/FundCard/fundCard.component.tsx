@@ -7,7 +7,6 @@ import svgIcon from "../../../assets/svg";
 import FundReturn from "../FundReturn/fundReturn.component";
 import styles from "./fundCard.styles";
 import { FundCardProps } from "./fundCard.type";
-import { theme } from "../../../theme";
 
 interface Fund {
   name: string;
@@ -35,13 +34,7 @@ const fundMapper: FundMapper = {
   },
   nature: {
     name: "Nature Fund",
-    icon: (
-      <MaterialCommunityIcons
-        name="leaf"
-        size={16}
-        color={theme.colors.secondary}
-      />
-    ),
+    icon: <MaterialCommunityIcons name="leaf" size={16} color={"#0FDF8F"} />,
   },
 };
 

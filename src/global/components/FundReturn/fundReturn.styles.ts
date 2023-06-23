@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   gainText: {
     fontFamily: theme.fonts.regular,
     fontSize: 14,
-    color: theme.colors.secondary,
+    color: "#0FDF8F",
   },
   lossText: {
     fontFamily: theme.fonts.regular,

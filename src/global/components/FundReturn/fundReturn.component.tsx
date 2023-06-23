@@ -3,7 +3,6 @@ import { Text, View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./fundReturn.styles";
 import { FundReturnProps } from "./fundReturn.types";
-import { theme } from "../../../theme";
 
 const FundReturn = ({ type = "gain", value }: FundReturnProps) => {
   return type === "gain" ? (
@@ -11,7 +10,7 @@ const FundReturn = ({ type = "gain", value }: FundReturnProps) => {
       <MaterialCommunityIcons
         name="arrow-top-right"
         size={16}
-        color={theme.colors.secondary}
+        color={"#0FDF8F"}
       />
       <Text style={styles.gainText}>{value}%</Text>
     </View>
