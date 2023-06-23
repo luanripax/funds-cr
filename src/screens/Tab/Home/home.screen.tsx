@@ -46,19 +46,19 @@ const mockedFunds = [
     type: "wind",
     returnType: "gain",
     returnValue: 29.56,
-    currentValue: 1032,
+    currentValue: 1032.23,
   },
   {
     type: "solar",
     returnType: "loss",
     returnValue: 2.45,
-    currentValue: 654,
+    currentValue: 654.01,
   },
   {
     type: "nature",
     returnType: "gain",
     returnValue: 15.54,
-    currentValue: 1654,
+    currentValue: 1654.21,
   },
 ];
 
@@ -92,7 +92,7 @@ const HomeScreen = () => {
           showsHorizontalScrollIndicator={false}
           style={styles.fundsList}
           horizontal
-          renderItem={({ item, index }) => <FundCard />}
+          renderItem={({ item }) => <FundCard data={item} />}
         />
         <View style={styles.bannerContainer}>
           <View style={styles.bannerText}>

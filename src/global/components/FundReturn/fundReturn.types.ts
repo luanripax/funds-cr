@@ -1,4 +1,4 @@
 export interface FundReturnProps {
-  type: "gain" | "loss";
+  type: string;
   value: number;
 }
