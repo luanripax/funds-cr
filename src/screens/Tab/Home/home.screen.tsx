@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 import styles from "./home.styles";
 import Header from "../../../global/components/Header/header.component";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -11,6 +11,7 @@ import FundCard from "../../../global/components/FundCard/fundCard.component";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store/store.types";
 import { addFund } from "../../../store/modules/funds/funds.slice";
+import { theme } from "../../../theme";
 
 const AccountBalance = () => {
   return (
@@ -33,7 +34,11 @@ const AccountPortfolio = () => {
           </View>
         </View>
         <View style={styles.rewardsContainer}>
-          <MaterialCommunityIcons name="bitcoin" size={18} color={"#770FDF"} />
+          <MaterialCommunityIcons
+            name="bitcoin"
+            size={18}
+            color={theme.colors.primary}
+          />
           <Text style={styles.rewardsLabel}>Earn rewards</Text>
         </View>
       </View>
@@ -84,7 +89,7 @@ const HomeScreen = () => {
         middleContent={<AccountBalance />}
         extraContent={<AccountPortfolio />}
       />
-      <View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.fundsTitle}>Funds</Text>
         <FlatList
           data={funds}
@@ -103,7 +108,7 @@ const HomeScreen = () => {
           </View>
           <SvgXml xml={svgIcon.carbonCredit} />
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
