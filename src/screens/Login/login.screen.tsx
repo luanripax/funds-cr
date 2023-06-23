@@ -6,13 +6,24 @@ import styles from "./login.styles";
 import Button from "../../global/components/Button/button.component";
 import Spacing from "../../global/components/Spacing/spacing.component";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector, useDispatch } from "react-redux";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
+import { RootState } from "../../store/store.types";
 
 const LoginScreen = () => {
   const { navigate } = useNavigation();
-
-  const onBack = () => {};
+  const { logged } = useSelector((state: RootState) => state.auth);
 
   const handleLogin = () => {
+    logged
+      ? navigate("TabNavigator")
+      : Toast.show({
+          type: "error",
+          text1: "This account is not registered yet, please sign up",
+        });
+  };
+
+  const handleSignup = () => {
     navigate("Signup");
   };
 
@@ -27,7 +38,13 @@ const LoginScreen = () => {
         <Button title="Login" onPress={handleLogin} />
         <Text style={styles.signUpText}>
           Don't have an account ?{" "}
-          <Text style={{ textDecorationLine: "underline" }}>Sign up</Text> here
+          <Text
+            onPress={handleSignup}
+            style={{ textDecorationLine: "underline" }}
+          >
+            Sign up
+          </Text>{" "}
+          here
         </Text>
       </View>
     </View>

@@ -8,6 +8,9 @@ import Spacing from "../../global/components/Spacing/spacing.component";
 import { Checkbox } from "react-native-paper";
 import { theme } from "../../theme";
 import { useNavigation } from "@react-navigation/native";
+import Toast from "react-native-toast-message";
+import { setUserLogged } from "../../store/modules/auth/auth.slice";
+import { useDispatch } from "react-redux";
 
 const Progress = () => {
   return (
@@ -21,13 +24,20 @@ const Progress = () => {
 
 const SignUpScreen = () => {
   const { navigate, goBack } = useNavigation();
+  const dispatch = useDispatch();
 
   const onBack = () => {
     goBack();
   };
 
   const handleSignIn = () => {
-    navigate("TabNavigator");
+    dispatch(setUserLogged());
+    Toast.show({
+      type: "success",
+      text1: "You have successfully registered",
+      visibilityTime: 2500,
+    });
+    navigate("Login");
   };
 
   const [checked, setChecked] = useState(false);
@@ -62,7 +72,11 @@ const SignUpScreen = () => {
         </View>
 
         <Spacing vertical={16} />
-        <Button title="Create account" onPress={handleSignIn} />
+        <Button
+          title="Create account"
+          onPress={handleSignIn}
+          enabled={checked}
+        />
         <Text style={styles.signUpText}>
           Already have an account ?{" "}
           <Text onPress={onBack} style={styles.underlineText}>

@@ -18,7 +18,7 @@ const FundCard = () => {
       <SvgXml xml={svgIcon.gainCurve} />
       <View style={styles.infoContainer}>
         <Text style={styles.value}>$1032.23</Text>
-        <FundReturn type="gain" value="29.98" />
+        <FundReturn type="gain" value={29.98} />
       </View>
     </View>
   );

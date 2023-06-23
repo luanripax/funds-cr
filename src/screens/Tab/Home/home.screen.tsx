@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FlatList, Text, View } from "react-native";
 import styles from "./home.styles";
 import Header from "../../../global/components/Header/header.component";
@@ -8,6 +8,9 @@ import FundReturn from "../../../global/components/FundReturn/fundReturn.compone
 import { SvgXml } from "react-native-svg";
 import svgIcon from "../../../assets/svg";
 import FundCard from "../../../global/components/FundCard/fundCard.component";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../store/store.types";
+import { addFund } from "../../../store/modules/funds/funds.slice";
 
 const AccountBalance = () => {
   return (
@@ -26,7 +29,7 @@ const AccountPortfolio = () => {
         <View style={styles.portfolioAmountContainer}>
           <Text style={styles.portfolioAmount}>$1,245.23</Text>
           <View style={{ top: 4 }}>
-            <FundReturn type="gain" value={"31.82"} />
+            <FundReturn type="gain" value={31.82} />
           </View>
         </View>
         <View style={styles.rewardsContainer}>
@@ -38,8 +41,34 @@ const AccountPortfolio = () => {
   );
 };
 
+const mockedFunds = [
+  {
+    type: "wind",
+    returnType: "gain",
+    returnValue: 29.56,
+    currentValue: 1032,
+  },
+  {
+    type: "solar",
+    returnType: "loss",
+    returnValue: 2.45,
+    currentValue: 654,
+  },
+  {
+    type: "nature",
+    returnType: "gain",
+    returnValue: 15.54,
+    currentValue: 1654,
+  },
+];
+
 const HomeScreen = () => {
-  const funds = [{}, {}, {}];
+  const dispatch = useDispatch();
+  const { funds } = useSelector((state: RootState) => state.funds);
+
+  useEffect(() => {
+    dispatch(addFund(mockedFunds));
+  }, []);
 
   return (
     <View style={styles.container}>
