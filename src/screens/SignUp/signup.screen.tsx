@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Platform, ScrollView, Text, View } from "react-native";
 import Header from "../../global/components/Header/header.component";
 import Input from "../../global/components/Input/input.component";
 import styles from "./signup.styles";
@@ -57,14 +57,25 @@ const SignUpScreen = () => {
         <Input label="Email" placeholder="Enter your email" />
         <Input label="Password" placeholder="Minimum 8 characters" secureText />
         <View style={styles.termsContainer}>
-          <Checkbox
-            status={checked ? "checked" : "unchecked"}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-            uncheckedColor="#E6E6E6"
-            color={theme.colors.primary}
-          />
+          {Platform.OS === "ios" ? (
+            <Checkbox
+              status={"checked"}
+              onPress={() => {
+                setChecked(!checked);
+              }}
+              uncheckedColor="#E6E6E6"
+              color={checked ? theme.colors.primary : "#E6E6E6"}
+            />
+          ) : (
+            <Checkbox
+              status={checked ? "checked" : "unchecked"}
+              onPress={() => {
+                setChecked(!checked);
+              }}
+              uncheckedColor="#E6E6E6"
+              color={theme.colors.primary}
+            />
+          )}
           <Text style={styles.termsText}>
             I am over 18 years of age and I have read and agree to the{" "}
             <Text style={{ color: "black" }}>Terms of Service</Text> and{" "}
